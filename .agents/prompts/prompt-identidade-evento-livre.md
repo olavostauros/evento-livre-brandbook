@@ -12,7 +12,7 @@ O ícone da marca é um **smartphone** cuja tela exibe um grafismo semelhante a 
 
 - **Ícone:** a cena reconhecível da entrada / do acesso.
 - **Índice:** o smartphone aponta para o **momento-verdade** do acesso — o instante em que o "fora" vira "dentro".
-- **Símbolo:** o QR como **passe/chave** e prova de confiança; a **mão** como agência humana, conotando o *suporte próximo* que diferencia a marca.
+- **Símbolo:** o QR como **passe/chave** e prova de confiança, sintetizando o instante de validação na portaria.
 
 Trate o momento de validação — o "check" de aprovado — como o **brand moment** central, o ponto de contato que sintetiza a proposta de valor.
 
@@ -47,8 +47,22 @@ Minimalista, escalável, com uso generoso de espaço em branco e **grid** consis
 Entregue o manual como uma **página web navegável** (um brandbook interativo), com estas restrições:
 
 - **Stack:** **[Astro](https://astro.build/)** como framework de construção de site estático, com **TypeScript** para toda a lógica e tipagem. Componentes `.astro` para layout e seções, estilos encapsulados por componente (scoped CSS), e SSR zero (site 100% estático).
-- **Ilustrações:** use **desenhos vetoriais em SVG** inline para o símbolo da marca (a mão + smartphone + QR na portaria), ícones e qualquer grafismo — nada de imagens rasterizadas (PNG/JPG). Os vetores devem ser limpos, escaláveis e coerentes com a direção de arte.
-- **Compartimentalização dos SVGs e animações:** todos os desenhos SVG e suas respectivas animações (CSS ou JS) devem ser centralizados e organizados em um único arquivo ou diretório dedicado dentro da estrutura Astro. Sugere-se criar `src/assets/svgs/` com um arquivo por SVG (ex.: `symbol.svg`, `check-icon.svg`, `qr-animated.svg`) ou um único `src/assets/svgs.ts` que exporte cada SVG como template string ou componente tipado. Nenhum SVG cru ou animação avulsa deve ficar solto dentro de componentes `.astro` — todo gráfico vetorial deve ser importado do ponto centralizado, garantindo reuso, manutenção e consistência visual em todo o brandbook.
+- **Ilustrações:** use **desenhos vetoriais em SVG** inline para o símbolo da marca (smartphone + QR na portaria), ícones e qualquer grafismo — nada de imagens rasterizadas (PNG/JPG). Os vetores devem ser limpos, escaláveis e coerentes com a direção de arte.
+- **Compartimentalização dos SVGs e animações:** todos os desenhos SVG e suas respectivas animações (CSS ou JS) devem ser organizados de forma **modular** dentro de `src/assets/svgs/`, com **um arquivo `.ts` por SVG** — cada um exportando seu respectivo template string. Um barrel `index.ts` re-exporta todos os módulos, mantendo a importação única (`from "../assets/svgs/index"`) para consumo nos componentes `.astro`.
+
+Estrutura esperada:
+```
+src/assets/svgs/
+├── index.ts         → barrel re-exportando todos os módulos
+├── symbol.ts        → symbolSVG (smartphone + QR validado)
+├── check-icon.ts    → checkIconSVG (ícone de validação avulso)
+├── qr-animated.ts   → qrAnimatedSVG (QR com animações CSS)
+├── arrow-down.ts    → arrowDownSVG (indicador de colapso)
+├── check-small.ts   → checkSmallSVG (check compacto)
+└── colors.ts        → interface BrandColor + array brandColors
+```
+
+Nenhum SVG cru ou animação avulsa deve ficar solto dentro de componentes `.astro` — todo gráfico vetorial deve ser importado do barrel centralizado, garantindo reuso, manutenção e consistência visual em todo o brandbook.
 - **Estrutura e navegação:** organize o manual em seções ancoradas (descrição, símbolo, cores, tipografia, tom de voz), com navegação suave entre elas. Cada seção pode ser um componente `.astro` individual.
 - **Micro-interações:** empregue **TypeScript** para pequenos toques funcionais que reforcem o conceito — por exemplo, **clicar numa amostra de cor para copiar o hex**, ou uma animação sutil do "check de validação" no símbolo (o brand moment).
 - **Responsividade:** layout fluido, legível de desktop a mobile, usando CSS Grid/Flexbox — com os estilos scoped dentro de cada componente `.astro`.
