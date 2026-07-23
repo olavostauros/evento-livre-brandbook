@@ -1,0 +1,122 @@
+/* ─── Evento Livre — Global Styles ─────────────────────────────── */
+
+/* Color tokens — sourced from brand palette */
+:root {
+  --color-primary: #0E2A4F;
+  --color-secondary: #071527;
+  --color-accent: #16C79A;
+  --color-support-1: #24282D;
+  --color-support-2: #93A0AE;
+  --color-bg: #F6F4EF;
+  --color-white: #FFFFFF;
+  --color-accent-dim: rgba(22, 199, 154, 0.15);
+
+  /* Typography */
+  --font-heading: "Schibsted Grotesk", system-ui, sans-serif;
+  --font-body: "Instrument Sans", system-ui, sans-serif;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Layout */
+  --max-width: 72rem;
+  --nav-height: 4rem;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Transitions */
+  --transition-fast: 200ms ease;
+  --transition-normal: 300ms ease;
+}
+
+/* ── Reset ────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-support-1);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Typography ───────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-primary);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); letter-spacing: -0.01em; }
+h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
+h4 { font-size: 1.125rem; }
+
+p { margin-bottom: var(--space-4); }
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+a:hover { color: var(--color-primary); }
+
+/* ── Utilities ─────────────────────────────────────────────────- */
+.section {
+  padding: var(--space-16) var(--space-6);
+}
+
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section-label {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+
+/* ── Selection ────────────────────────────────────────────────── */
+::selection {
+  background: var(--color-accent);
+  color: var(--color-secondary);
+}
+
+/* ── Font loading fallback ───────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,143 @@
+---
+import ColorSwatch from "./ColorSwatch.astro";
+import { brandColors } from "../assets/svgs/index";
+---
+
+<section class="colors-section section" id="cores">
+  <div class="section-inner">
+    <span class="section-label">Seção 03</span>
+    <h2>Cores</h2>
+    <p class="colors-intro">
+      Uma paleta construída a partir de um <strong>azul primário profundo</strong>
+      — denso e maduro, distante do azul-corporativo genérico. O acento
+      <strong>verde/ciano</strong> traduz cromaticamente o instante do QR validado,
+      amarrando cor e símbolo num só gesto.
+    </p>
+
+    <div class="colors-palette">
+      <div class="colors-grid">
+        {brandColors.map((color) => <ColorSwatch color={color} />)}
+      </div>
+    </div>
+
+    <div class="colors-usage">
+      <h3>Sistema de aplicação</h3>
+      <div class="usage-grid">
+        <div class="usage-item">
+          <div class="usage-swatch" style="background: var(--color-primary);"></div>
+          <div class="usage-info">
+            <strong>Primária</strong>
+            <span>Fundos, títulos, elementos de destaque, header, footer</span>
+          </div>
+        </div>
+        <div class="usage-item">
+          <div class="usage-swatch" style="background: var(--color-secondary);"></div>
+          <div class="usage-info">
+            <strong>Secundária</strong>
+            <span>Fundos alternativos, hero sections, overlays</span>
+          </div>
+        </div>
+        <div class="usage-item">
+          <div class="usage-swatch" style="background: var(--color-accent);"></div>
+          <div class="usage-info">
+            <strong>Acento</strong>
+            <span>CTAs, validações, links, indicadores de sucesso, toques interativos</span>
+          </div>
+        </div>
+        <div class="usage-item">
+          <div class="usage-swatch" style="background: var(--color-support-1);"></div>
+          <div class="usage-info">
+            <strong>Suporte Grafite</strong>
+            <span>Textos de corpo, elementos estruturais</span>
+          </div>
+        </div>
+        <div class="usage-item">
+          <div class="usage-swatch" style="background: var(--color-support-2); border: 1px solid #d0ccc4;"></div>
+          <div class="usage-info">
+            <strong>Suporte Prata</strong>
+            <span>Bordas, hint text, UI sutil, metadados</span>
+          </div>
+        </div>
+        <div class="usage-item">
+          <div class="usage-swatch" style="background: var(--color-bg); border: 1px solid #d0ccc4;"></div>
+          <div class="usage-info">
+            <strong>Fundo</strong>
+            <span>Background principal, cartões, áreas de conteúdo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .colors-section {
+    background: var(--color-white);
+  }
+
+  .colors-intro {
+    font-size: 1.05rem;
+    color: var(--color-support-1);
+    max-width: 640px;
+    margin-bottom: var(--space-12);
+  }
+
+  .colors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-4);
+    margin-bottom: var(--space-16);
+  }
+
+  .colors-usage {
+    background: var(--color-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+  }
+
+  .colors-usage h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-6);
+    color: var(--color-primary);
+  }
+
+  .usage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-4);
+  }
+
+  .usage-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-3);
+    border-radius: var(--radius-sm);
+    background: var(--color-white);
+  }
+
+  .usage-swatch {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+  }
+
+  .usage-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .usage-info strong {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--color-primary);
+  }
+
+  .usage-info span {
+    font-size: 0.8rem;
+    color: var(--color-support-2);
+    line-height: 1.4;
+  }
+</style>

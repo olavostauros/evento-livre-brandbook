@@ -1,0 +1,204 @@
+---
+---
+
+<section class="hero" id="marca">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <span class="section-label">Seção 01</span>
+      <h1 class="hero-title">
+        <span class="hero-title-line">Manual de</span>
+        <span class="hero-title-line hero-title-highlight">Identidade Visual</span>
+      </h1>
+      <p class="hero-subtitle">
+        Evento Livre — plataforma <strong>SaaS de ticketing e gestão de eventos</strong>
+        que empodera organizadores com <strong>controle sem esforço</strong>.
+      </p>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <span class="hero-scroll-text">Role para explorar</span>
+    <svg width="16" height="24" viewBox="0 0 16 24" fill="none">
+      <rect x="1" y="1" width="14" height="22" rx="7" stroke="#93A0AE" stroke-width="2"/>
+      <circle cx="8" cy="8" r="2" fill="#16C79A">
+        <animate attributeName="cy" values="8;14;8" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+  </div>
+</section>
+
+<section class="brand" id="brand-detail">
+  <div class="section-inner">
+    <span class="section-label">Posicionamento</span>
+    <h2>Marca</h2>
+
+    <div class="brand-grid">
+      <div class="brand-card">
+        <h3 class="brand-card-title">Essência</h3>
+        <p>
+          <strong>Empoderamento operacional.</strong> O "Livre" da marca não denota
+          gratuidade — significa <em>autonomia</em> e <em>ausência de fricção</em>.
+          A promessa é <strong>controle sem esforço</strong> para quem produz o evento.
+        </p>
+      </div>
+
+      <div class="brand-card">
+        <h3 class="brand-card-title">Território</h3>
+        <p>
+          Conversa com o registro de <strong>fintech / infraestrutura</strong> —
+          sólido, preciso, confiável — porém <strong>humanizado</strong> pelo
+          diferencial competitivo: <strong>suporte próximo</strong>.
+        </p>
+      </div>
+
+      <div class="brand-card">
+        <h3 class="brand-card-title">Persona</h3>
+        <p>
+          Produtores e casas de eventos que buscam <strong>previsibilidade</strong>
+          e <strong>relacionamento</strong>. Cansados de plataformas impessoais,
+          encontram no Evento Livre um parceiro que resolve.
+        </p>
+      </div>
+
+      <div class="brand-card">
+        <h3 class="brand-card-title">Posicionamento</h3>
+        <p>
+          Deliberadamente afastado da estética "balada colorida" do mercado de
+          ticketing. Nossa identidade é <strong>sóbria, madura e orientada a
+          resultados</strong>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-24) var(--space-6);
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(22, 199, 154, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-content {
+    max-width: 680px;
+  }
+
+  .hero-content .section-label {
+    color: var(--color-accent);
+    opacity: 0.8;
+  }
+
+  .hero-title {
+    color: var(--color-white);
+    margin-bottom: var(--space-6);
+  }
+
+  .hero-title-line {
+    display: block;
+  }
+
+  .hero-title-highlight {
+    color: var(--color-accent);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--color-support-2);
+    max-width: 540px;
+    line-height: 1.6;
+  }
+
+  .hero-subtitle strong {
+    color: var(--color-white);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: var(--space-8);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--color-support-2);
+  }
+
+  .hero-scroll-text {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ── Brand Section ─────────────────────────────────────────── */
+  .brand {
+    padding: var(--space-20) var(--space-6);
+    background: var(--color-white);
+  }
+
+  .brand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-12);
+  }
+
+  .brand-card {
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    padding: var(--space-8);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  .brand-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  }
+
+  .brand-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-3);
+    border-bottom: 2px solid var(--color-accent-dim);
+  }
+
+  .brand-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-support-1);
+    margin: 0;
+  }
+
+  .brand-card p em {
+    color: var(--color-primary);
+    font-style: italic;
+  }
+</style>

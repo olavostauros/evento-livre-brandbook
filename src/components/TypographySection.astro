@@ -1,0 +1,249 @@
+---
+---
+
+<section class="typo-section section" id="tipografia">
+  <div class="section-inner">
+    <span class="section-label">Seção 04</span>
+    <h2>Tipografia</h2>
+    <p class="typo-intro">
+      Um <strong>par tipográfico</strong> que equilibra confiança com calor:
+      uma grotesca humanista para títulos e uma sans de interface altamente
+      legível para corpo e UI.
+    </p>
+
+    <div class="typo-pair">
+      <!-- Schibsted Grotesk -->
+      <div class="typo-card">
+        <div class="typo-header">
+          <h3 class="typo-name">Schibsted Grotesk</h3>
+          <span class="typo-role">Títulos / Display</span>
+          <span class="typo-weights">500 · 600 · 700 · 800</span>
+        </div>
+        <div class="typo-samples">
+          <div class="typo-sample" style="font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em;">
+            Display
+          </div>
+          <div class="typo-sample" style="font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em;">
+            Título Principal
+          </div>
+          <div class="typo-sample" style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em;">
+            Subtítulo / Seção
+          </div>
+          <div class="typo-sample" style="font-size: 1rem; font-weight: 500; letter-spacing: 0em;">
+            Corpo de texto — A aberta, contraformas generosas, o calor de uma grotesca com personalidade.
+          </div>
+        </div>
+      </div>
+
+      <!-- Instrument Sans -->
+      <div class="typo-card">
+        <div class="typo-header">
+          <h3 class="typo-name">Instrument Sans</h3>
+          <span class="typo-role">Corpo / UI</span>
+          <span class="typo-weights">400 · 500 · 600</span>
+        </div>
+        <div class="typo-samples">
+          <div class="typo-sample" style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 1.5rem; font-weight: 600; letter-spacing: -0.01em;">
+            Cabeçalho de Interface
+          </div>
+          <div class="typo-sample" style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 1.125rem; font-weight: 500;">
+            Corpo de texto — Legibilidade em primeiro lugar. Cada curva é pensada para telas.
+          </div>
+          <div class="typo-sample" style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400;">
+            Texto de apoio / labels — claro e funcional em qualquer tamanho.
+          </div>
+          <div class="typo-sample" style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 0.75rem; font-weight: 400; letter-spacing: 0.02em;">
+            Legenda / metadados · 12px · tracking +2%
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="typo-scale">
+      <h3>Escala tipográfica</h3>
+      <div class="scale-table">
+        <div class="scale-row scale-row--display">
+          <span class="scale-tag">Display</span>
+          <span class="scale-size">3.5rem / 56px</span>
+          <span class="scale-desc">Hero sections, comunicações especiais</span>
+          <span class="scale-specs">Schibsted Grotesk 800 · -2% tracking</span>
+        </div>
+        <div class="scale-row scale-row--h1">
+          <span class="scale-tag">H1</span>
+          <span class="scale-size">2.25rem / 36px</span>
+          <span class="scale-desc">Título de seção principal</span>
+          <span class="scale-specs">Schibsted Grotesk 700 · -1% tracking</span>
+        </div>
+        <div class="scale-row scale-row--h2">
+          <span class="scale-tag">H2</span>
+          <span class="scale-size">1.5rem / 24px</span>
+          <span class="scale-desc">Subtítulo, heading de bloco</span>
+          <span class="scale-specs">Schibsted Grotesk 600 · 0% tracking</span>
+        </div>
+        <div class="scale-row scale-row--body">
+          <span class="scale-tag">Body</span>
+          <span class="scale-size">1rem / 16px</span>
+          <span class="scale-desc">Texto corrente, parágrafos</span>
+          <span class="scale-specs">Instrument Sans 400 · 0% tracking · leading 1.6</span>
+        </div>
+        <div class="scale-row scale-row--small">
+          <span class="scale-tag">Small</span>
+          <span class="scale-size">0.875rem / 14px</span>
+          <span class="scale-desc">Auxiliar, hint text, metadata</span>
+          <span class="scale-specs">Instrument Sans 400 · 0% tracking</span>
+        </div>
+        <div class="scale-row scale-row--caption">
+          <span class="scale-tag">Caption</span>
+          <span class="scale-size">0.75rem / 12px</span>
+          <span class="scale-desc">Legendas, badges, UI menor</span>
+          <span class="scale-specs">Instrument Sans 500 · +2% tracking · uppercase</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .typo-section {
+    background: var(--color-white);
+  }
+
+  .typo-intro {
+    font-size: 1.05rem;
+    color: var(--color-support-1);
+    max-width: 600px;
+    margin-bottom: var(--space-12);
+  }
+
+  .typo-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+    margin-bottom: var(--space-16);
+  }
+
+  .typo-card {
+    background: var(--color-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  .typo-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  }
+
+  .typo-header {
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
+    border-bottom: 2px solid var(--color-accent-dim);
+  }
+
+  .typo-name {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-1);
+  }
+
+  .typo-role {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-right: var(--space-3);
+  }
+
+  .typo-weights {
+    font-size: 0.75rem;
+    color: var(--color-support-2);
+    font-family: "SF Mono", "Fira Code", monospace;
+  }
+
+  .typo-samples {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .typo-sample {
+    font-family: "Schibsted Grotesk", system-ui, sans-serif;
+    color: var(--color-primary);
+    line-height: 1.3;
+  }
+
+  /* ── Scale table ───────────────────────────────────────────── */
+  .typo-scale {
+    background: var(--color-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+  }
+
+  .typo-scale h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-6);
+    color: var(--color-primary);
+  }
+
+  .scale-table {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .scale-row {
+    display: grid;
+    grid-template-columns: 80px 140px 1fr 1fr;
+    gap: var(--space-4);
+    align-items: center;
+    padding: var(--space-4) var(--space-3);
+    background: var(--color-white);
+    border-radius: var(--radius-sm);
+    transition: background var(--transition-fast);
+  }
+
+  .scale-row:hover {
+    background: var(--color-accent-dim);
+  }
+
+  .scale-tag {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .scale-size {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.8rem;
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+
+  .scale-desc {
+    font-size: 0.85rem;
+    color: var(--color-support-1);
+  }
+
+  .scale-specs {
+    font-size: 0.75rem;
+    color: var(--color-support-2);
+  }
+
+  @media (max-width: 768px) {
+    .typo-pair {
+      grid-template-columns: 1fr;
+    }
+
+    .scale-row {
+      grid-template-columns: 70px 1fr;
+    }
+
+    .scale-desc, .scale-specs {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

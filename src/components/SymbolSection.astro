@@ -1,0 +1,189 @@
+---
+import { symbolSVG } from "../assets/svgs/index";
+---
+
+<section class="symbol-section section" id="simbolo">
+  <div class="section-inner">
+    <span class="section-label">Seção 02</span>
+    <h2>Símbolo</h2>
+    <p class="symbol-intro">
+      O ícone da marca sintetiza o <strong>momento-verdade</strong> do acesso —
+      a validação do ingresso na portaria. Nele, três camadas de significado
+      se encontram.
+    </p>
+
+    <div class="symbol-layout">
+      <div class="symbol-visual">
+        <div class="symbol-frame" aria-label="Símbolo da marca: mão segurando smartphone com QR code validado">
+          {symbolSVG}
+        </div>
+      </div>
+
+      <div class="symbol-layers">
+        <div class="layer-card">
+          <span class="layer-number">Ícone</span>
+          <p>A cena reconhecível da <strong>entrada</strong> — o gesto de aproximar o smartphone do leitor na portaria. Qualquer frequentador de eventos reconhece o momento.</p>
+        </div>
+
+        <div class="layer-card">
+          <span class="layer-number">Índice</span>
+          <p>O smartphone aponta para o <strong>instante da virada</strong>: o "fora" que vira "dentro". É o <em>brand moment</em> — o ponto de contato central da experiência.</p>
+        </div>
+
+        <div class="layer-card">
+          <span class="layer-number">Símbolo</span>
+          <p>O QR code como <strong>passe / chave</strong> e prova de confiança. A mão como <strong>agência humana</strong>, conotando o <em>suporte próximo</em> que diferencia a marca.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="symbol-check">
+      <div class="check-visual" aria-hidden="true">
+        <svg width="40" height="40" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="22" fill="#16C79A"/>
+          <path d="M14 24 l6.5 6.5 l13 -13" stroke="#071527" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="check-text">
+        <h3>O brand moment</h3>
+        <p>
+          O "check" de aprovado — o instante em que o QR code é validado —
+          <strong>sintetiza toda a proposta de valor</strong> da Evento Livre:
+          acesso sem atrito, confiança confirmada, suporte presente.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .symbol-section {
+    background: var(--color-white);
+  }
+
+  .symbol-intro {
+    font-size: 1.05rem;
+    color: var(--color-support-1);
+    max-width: 600px;
+    margin-bottom: var(--space-12);
+  }
+
+  .symbol-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    align-items: center;
+    margin-bottom: var(--space-16);
+  }
+
+  .symbol-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .symbol-frame {
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .symbol-frame :global(svg) {
+    width: 100%;
+    height: 100%;
+  }
+
+  .symbol-layers {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .layer-card {
+    padding: var(--space-6);
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--color-accent);
+    transition: transform var(--transition-fast);
+  }
+
+  .layer-card:hover {
+    transform: translateX(4px);
+  }
+
+  .layer-number {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-2);
+  }
+
+  .layer-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+    color: var(--color-support-1);
+  }
+
+  .layer-card p em {
+    color: var(--color-primary);
+    font-style: italic;
+  }
+
+  /* ── Brand moment callout ──────────────────────────────────── */
+  .symbol-check {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    padding: var(--space-8);
+    background: linear-gradient(135deg, var(--color-accent-dim) 0%, transparent 100%);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-accent-dim);
+  }
+
+  .check-visual {
+    flex-shrink: 0;
+    animation: checkPulse 3s ease-in-out infinite;
+  }
+
+  @keyframes checkPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+  }
+
+  .check-text h3 {
+    font-size: 1rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .check-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    color: var(--color-support-1);
+  }
+
+  @media (max-width: 768px) {
+    .symbol-layout {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+
+    .symbol-frame {
+      max-width: 260px;
+    }
+
+    .symbol-check {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

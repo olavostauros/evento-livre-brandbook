@@ -1,0 +1,192 @@
+---
+---
+
+<section class="voice-section section" id="voz">
+  <div class="section-inner">
+    <span class="section-label">Seção 05</span>
+    <h2>Tom de Voz</h2>
+    <p class="voice-intro">
+      Direto, seguro e <strong>sem jargão intimidador</strong>. A Evento Livre fala
+      como um parceiro que resolve — próximo, prestativo e transparente.
+    </p>
+
+    <div class="voice-principles">
+      <div class="voice-card">
+        <div class="voice-card-header">
+          <span class="voice-number">01</span>
+          <h3>Claro e direto</h3>
+        </div>
+        <p class="voice-desc">Sem rodeios. A informação essencial vem primeiro.</p>
+        <div class="voice-examples">
+          <div class="voice-do">
+            <strong>✓ Fale assim:</strong>
+            <span>"Seu ingresso está confirmado. Apresente este QR na portaria."</span>
+          </div>
+          <div class="voice-dont">
+            <strong>✗ Não fale assim:</strong>
+            <span>"Por meio da presente, vimos informar que o ingresso ora adquirido encontra-se em situação de regularidade perante o sistema."</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="voice-card">
+        <div class="voice-card-header">
+          <span class="voice-number">02</span>
+          <h3>Humano e próximo</h3>
+        </div>
+        <p class="voice-desc">A marca tem voz de gente, não de robô. O suporte é o diferencial.</p>
+        <div class="voice-examples">
+          <div class="voice-do">
+            <strong>✓ Fale assim:</strong>
+            <span>"Precisou de ajuda? A gente resolve — é pra isso que existimos."</span>
+          </div>
+          <div class="voice-dont">
+            <strong>✗ Não fale assim:</strong>
+            <span>"Para suporte, consulte o FAQ e abra um ticket. Tempo de resposta: 48h úteis."</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="voice-card">
+        <div class="voice-card-header">
+          <span class="voice-number">03</span>
+          <h3>Confiante, não arrogante</h3>
+        </div>
+        <p class="voice-desc">Segurança sem soberba. A marca sabe o que faz e transmite isso com calma.</p>
+        <div class="voice-examples">
+          <div class="voice-do">
+            <strong>✓ Fale assim:</strong>
+            <span>"Seu dinheiro na conta em até 2 dias úteis. Simples assim."</span>
+          </div>
+          <div class="voice-dont">
+            <strong>✗ Não fale assim:</strong>
+            <span>"Garantimos o melhor prazo do mercado, superando todas as expectativas dos nossos clientes."</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="voice-card">
+        <div class="voice-card-header">
+          <span class="voice-number">04</span>
+          <h3>Empático e resolutivo</h3>
+        </div>
+        <p class="voice-desc">Antecipe a dor do usuário. Responda antes que ele precise perguntar.</p>
+        <div class="voice-examples">
+          <div class="voice-do">
+            <strong>✓ Fale assim:</strong>
+            <span>"Não vai dar pra ir? Sem problema — o cancelamento é rápido e o estorno cai em até 5 dias."</span>
+          </div>
+          <div class="voice-dont">
+            <strong>✗ Não fale assim:</strong>
+            <span>"Consulte a política de reembolso disponível na seção 'Termos e Condições' item 14.3."</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .voice-section {
+    background: var(--color-white);
+  }
+
+  .voice-intro {
+    font-size: 1.05rem;
+    color: var(--color-support-1);
+    max-width: 600px;
+    margin-bottom: var(--space-12);
+  }
+
+  .voice-principles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+
+  .voice-card {
+    background: var(--color-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  .voice-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  }
+
+  .voice-card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+  }
+
+  .voice-number {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: var(--color-accent);
+    color: var(--color-secondary);
+  }
+
+  .voice-card-header h3 {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  .voice-desc {
+    font-size: 0.9rem;
+    color: var(--color-support-2);
+    margin-bottom: var(--space-4);
+  }
+
+  .voice-examples {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .voice-do, .voice-dont {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-3);
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .voice-do {
+    background: rgba(22, 199, 154, 0.1);
+    border-left: 3px solid var(--color-accent);
+  }
+
+  .voice-dont {
+    background: rgba(147, 160, 174, 0.1);
+    border-left: 3px solid var(--color-support-2);
+  }
+
+  .voice-do strong, .voice-dont strong {
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .voice-do strong { color: var(--color-accent); }
+  .voice-dont strong { color: var(--color-support-2); }
+
+  .voice-do span, .voice-dont span {
+    color: var(--color-support-1);
+  }
+
+  @media (max-width: 768px) {
+    .voice-principles {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

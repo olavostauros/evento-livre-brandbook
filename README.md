@@ -1,32 +1,76 @@
 # 🎫 Evento Livre — Manual de Identidade Visual
 
-**Evento Livre** é uma plataforma SaaS de ticketing e gestão de eventos com foco B2B. Nossa missão é permitir que organizadores vendam ingressos aos frequentadores, que por sua vez podem comprar, cancelar e estornar os valores — tudo com controle sem esforço.
+**Evento Livre** é uma plataforma SaaS de ticketing e gestão de eventos com foco B2B. Este repositório contém o **Manual de Identidade Visual** (Brand Book) interativo, construído com [Astro](https://astro.build/) e TypeScript.
 
-## Sobre este repositório
+## Stack
 
-Este repositório contém o **Manual de Identidade Visual** (Brand Book) do Evento Livre, versão 1.0 (2026). O manual foi projetado no [Penpot](https://penpot.app/) e exportado como um arquivo HTML autossuficiente (bundled).
+| Tecnologia | Uso |
+|------------|-----|
+| [Astro](https://astro.build/) | Site estático (SSG, zero SSR) |
+| TypeScript | Lógica, tipagem, centralização de assets |
+| CSS scoped | Estilos encapsulados por componente |
+| SVG inline | Todos os gráficos vetoriais (zero PNG/JPG) |
+| Google Fonts | Schibsted Grotesk + Instrument Sans |
 
-## Conteúdo do manual
+## Estrutura do projeto
 
-O brand book cobre os seguintes pilares da identidade da marca:
+```
+evento-livre-brandbook/
+├── src/
+│   ├── assets/
+│   │   └── svgs/
+│   │       └── index.ts          # Centralized SVG exports + brand color data
+│   ├── components/
+│   │   ├── Layout.astro          # Base layout (nav, footer, fonts)
+│   │   ├── Hero.astro            # Seção 01 — Marca / Posicionamento
+│   │   ├── SymbolSection.astro   # Seção 02 — Símbolo (mão + smartphone + QR)
+│   │   ├── ColorsSection.astro   # Seção 03 — Paleta de cores
+│   │   ├── TypographySection.astro # Seção 04 — Sistema tipográfico
+│   │   ├── VoiceSection.astro    # Seção 05 — Tom de voz
+│   │   └── ColorSwatch.astro     # Componente reutilizável de amostra de cor
+│   ├── pages/
+│   │   └── index.astro           # Página única com todas as seções
+│   └── styles/
+│       └── global.css            # Reset, tokens, tipografia base
+├── public/
+│   └── favicon.svg
+├── astro.config.mjs
+├── tsconfig.json
+├── package.json
+└── README.md
+```
+
+## Como executar
+
+```bash
+npm install
+npm run dev       # Servidor local (geralmente http://localhost:4321)
+npm run build     # Gera site estático em dist/
+npm run preview   # Preview do build
+```
+
+O build final gera uma saída **100% estática** em `dist/`, autocontida e pronta para deploy.
+
+## Seções do manual
 
 | # | Seção | Descrição |
 |---|-------|-----------|
-| 01 | **Marca** | Posicionamento, essência da empresa e promessa |
-| 02 | **Símbolo** | Conceito do símbolo (mão + smartphone + QR validado) |
-| 03 | **Cores** | Paleta cromática (#0E2A4F, #071527, #16C79A, #24282D, #93A0AE, #F6F4EF) |
-| 04 | **Tipografia** | Sistema tipográfico (Schibsted Grotesk + Instrument Sans) |
-| 05 | **Voz** | Tom de voz e diretrizes de comunicação |
+| 01 | **Marca** | Posicionamento, essência e promessa da marca |
+| 02 | **Símbolo** | Conceito do símbolo (mão + smartphone + QR validado) em 3 camadas semióticas |
+| 03 | **Cores** | Paleta cromática com código hex, papel e conotação |
+| 04 | **Tipografia** | Sistema tipográfico (Schibsted Grotesk + Instrument Sans) com escala |
+| 05 | **Voz** | Tom de voz e diretrizes de comunicação com exemplos |
 
-## Como visualizar
+## Micro-interações
 
-Basta abrir o arquivo [`index.html`](./index.html) em qualquer navegador moderno. Não é necessário servidor — todos os assets (fontes, estilos, ícones) estão embutidos no próprio HTML.
+- **Copiar HEX:** clique sobre o código hexadecimal de qualquer cor para copiá-lo para a área de transferência
+- **Scroll suave:** navegação com scroll suave entre seções
+- **Animação do QR:** o símbolo na seção de cores inclui animação sutil do check de validação
+- **Menu mobile:** navegação responsiva com overlay em dispositivos móveis
 
-## Tecnologias
+## SVG centralizado
 
-- **Design:** Penpot (ferramenta de design open-source)
-- **Bundle:** Penpot HTML Export (self-contained)
-- **Runtime:** DC (Declarative Components) — framework reativo embutido
+Todos os vetores (símbolo, ícones, animações) estão centralizados em `src/assets/svgs/index.ts` e importados pelos componentes `.astro`. Nenhum SVG cru está solto nos componentes — garantindo reuso, manutenção e consistência visual.
 
 ## Licença
 

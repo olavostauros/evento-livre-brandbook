@@ -1,0 +1,127 @@
+---
+import type { BrandColor } from "../assets/svgs/index";
+
+const { color } = Astro.props as { color: BrandColor };
+---
+
+<div class="swatch" data-color={color.hex}>
+  <div
+    class="swatch-preview"
+    style="background-color: {color.hex}; {color.hex === '#F6F4EF' ? 'border: 1px solid #d0ccc4;' : ''}"
+  ></div>
+  <div class="swatch-info">
+    <div class="swatch-name">{color.name}</div>
+    <div class="swatch-hex" data-hex={color.hex}>
+      <span class="swatch-hex-value">{color.hex}</span>
+      <span class="swatch-copy-hint" aria-live="polite">Click to copy</span>
+    </div>
+    <div class="swatch-role">{color.role}</div>
+    <div class="swatch-connotation">{color.connotation}</div>
+  </div>
+</div>
+
+<script>
+  const swatches = document.querySelectorAll<HTMLElement>(".swatch");
+  swatches.forEach((el) => {
+    const hexEl = el.querySelector<HTMLElement>(".swatch-hex");
+    const hintEl = el.querySelector<HTMLElement>(".swatch-copy-hint");
+    const hex = el.dataset.color ?? "";
+
+    if (hexEl && hintEl) {
+      hexEl.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(hex);
+          hintEl.textContent = "Copied!";
+          hexEl.classList.add("copied");
+          setTimeout(() => {
+            hintEl.textContent = "Click to copy";
+            hexEl.classList.remove("copied");
+          }, 1500);
+        } catch {
+          hintEl.textContent = "Failed to copy";
+        }
+      });
+    }
+  });
+</script>
+
+<style>
+  .swatch {
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--color-white);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  .swatch:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .swatch-preview {
+    height: 100px;
+    transition: background-color var(--transition-normal);
+  }
+
+  .swatch-info {
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .swatch-name {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-primary);
+  }
+
+  .swatch-hex {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    user-select: none;
+  }
+
+  .swatch-hex-value {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-accent);
+  }
+
+  .swatch-copy-hint {
+    font-size: 0.7rem;
+    color: var(--color-support-2);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+  }
+
+  .swatch-hex:hover .swatch-copy-hint {
+    opacity: 1;
+  }
+
+  .swatch-hex.copied .swatch-copy-hint {
+    opacity: 1;
+    color: var(--color-accent);
+  }
+
+  .swatch-role {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-support-2);
+  }
+
+  .swatch-connotation {
+    font-size: 0.8rem;
+    color: var(--color-support-1);
+    line-height: 1.4;
+  }
+</style>
